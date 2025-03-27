@@ -1,0 +1,17 @@
+anakIbu(andi).
+anakIbu(budi).
+anakIbu(cika).
+anakIbu(dani).
+anakIbu(emil).
+not(anakIbu(fadil)).
+
+sukaPermen(andi).
+sukaPermen(budi).
+sukaPermen(cika).
+not(sukaPermen(dani)).
+not(sukaPermen(email)).
+
+siapa_saja(X) :- anakIbu(X).
+dapatpremen(X) :- anakIbu(X), sukaPermen(X).
+dapatuang(X):- anakIbu(X), not(sukaPermen(X)).
+tidakmendapatkanapaapa(X) :- not(sukaPermen(X)).
