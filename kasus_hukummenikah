@@ -2,6 +2,7 @@ menikah(wati, andi).
 anakKandung(wati, budi).
 saudaraKembar(budi, andi).
 
-is_saudaraKandung(X, Y).
-is_keponakan(Z, Y).
-not(sah(menikah(Z,Y))).
+saudaraKandung(X, Y) :- saudaraKembar(X, Y).
+saudaraKandung(X, Y):- orangTua(Z, X),orangTua(Z, Y), X \= Y.
+is_keponakan(X, Y) :- anakKandung(X, Z),saudaraKandung(Z, Y).
+not_sah(X, Y) :- is_keponakan(X, Y).
